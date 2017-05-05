@@ -6,8 +6,8 @@ class Background extends Component {
   render() {
     return (
       <div>
-        {this.props.squares.map(ele => {
-          return <div id={ele.id} key={ele.id} className='color'>This is: {ele.id}</div>
+        {this.props.squares.map((ele, i) => {
+          return <div id={i} key={i} className='color'>This is: {i}</div>
         })}
       </div>
     );
