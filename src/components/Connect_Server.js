@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://api.indeed.com/ads/apisearch?publisher=5101146230298050&v=2');
+xhr.open('GET', 'http://api.indeed.com/ads/apisearch?publisher=5101146230298050&v=2');
 xhr.send(null);
 var weatherRes = undefined;
 weatherRes = xhr.onreadystatechange = () => {
