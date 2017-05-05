@@ -14,3 +14,18 @@ weatherRes = xhr.onreadystatechange = () => {
     }
   }
 }
+
+function getCORS(url, success) {
+  var request = new XMLHttpRequest();
+  if (!('withCredentials' in request)) request = new XDomainRequest();
+  request.open('GET', url);
+  request.onreadystatechange = success;
+  request.send();
+  return request;
+}
+
+getCORS('https://jobs.github.com/positions.json?description=python&location=new+york', (request) => {
+  if (request.readyState === 4 && request.status === 200) {
+    console.log(request.responseText);
+  }
+})
