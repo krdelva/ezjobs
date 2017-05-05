@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapStateToProps, mapDispatchToProps} from '../redux/store.js';
+import {weatherRes} from './Connect_Server.js';
 
 class Weather extends Component {
   handleClick = () => {
@@ -11,6 +12,7 @@ class Weather extends Component {
     return (
       <div>
       <h1>Your mom goes here {this.props.count}</h1>
+      <p>Bob</p>
       <button onClick={() => this.props.increment()}>Add</button>
       </div>
     );

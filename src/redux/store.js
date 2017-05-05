@@ -6,7 +6,8 @@ export const store = createStore(combReducer);
 
 export const mapStateToProps = (state) => {
   return {
-    count: state.counter
+    count: state.counter,
+    squares: state.squares
   };
 };
 
