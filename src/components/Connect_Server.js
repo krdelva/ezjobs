@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://api.indeed.com/ads/apisearch?publisher=5101146230298050&v=2');
+xhr.open('GET', 'https://jobs.github.com/positions.json?description=python&location=new+york');
 xhr.send(null);
 var weatherRes = undefined;
 weatherRes = xhr.onreadystatechange = () => {
@@ -8,6 +8,7 @@ weatherRes = xhr.onreadystatechange = () => {
   if (xhr.readyState === DONE) {
     if (xhr.status === OK) {
       console.log(xhr.responseText);
+      return xhr.responseText;
     } else {
       console.log('Error: ' + xhr.status);
     }
