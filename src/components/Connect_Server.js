@@ -8,6 +8,7 @@ function xdr(url, method, data, callback, errback) {
 
         if('withCredentials' in req) {
             req.open(method, url, true);
+            req.setRequestHeader('Access-Control-Allow-Origin', '*');
             req.onerror = errback;
             req.onreadystatechange = function() {
                 if (req.readyState === 4) {
@@ -23,6 +24,7 @@ function xdr(url, method, data, callback, errback) {
     } else if(XDomainRequest) {
         req = new XDomainRequest();
         req.open(method, url);
+        req.setRequestHeader('Access-Control-Allow-Origin', '*');
         req.onerror = errback;
         req.onload = function() {
             callback(req.responseText);
