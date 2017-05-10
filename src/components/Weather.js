@@ -1,19 +1,32 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapStateToProps, mapDispatchToProps} from '../redux/store.js';
-import {weatherRes} from './Connect_Server.js';
+import $ from 'jquery';
 
 class Weather extends Component {
-  handleClick = () => {
-    console.log('called');
-    //() => this.props.increment;
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+    console.log(this.props.match.params.id);
+    console.log(this.props.data);
   }
   render() {
     return (
       <div>
-      <h1>Your mom goes here {this.props.count}</h1>
+      <h1>Your info goes here:</h1>
+
+      {this.props.data.map((ele, i) => {
+          if (ele.id === this.props.match.params.id) {
+            return (
+              <div key={i} id='job'>
+              <h4>{ele.title}</h4>
+              <p>{ele.description}</p>
+              </div>
+            );
+          }
+        }
+      )}
       <p>Bob</p>
-      <button onClick={() => this.props.increment()}>Add</button>
       </div>
     );
   }

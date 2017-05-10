@@ -18,3 +18,13 @@ body {
 .right {
   float: right;
 }
+
+.title {
+  background: yellow;
+}
+
+#job {
+  font-size: 12px;
+  text-align: left;
+  margin: 10px;
+}

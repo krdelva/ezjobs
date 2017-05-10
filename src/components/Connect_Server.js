@@ -1,40 +1,72 @@
+import $ from 'jquery';
 // https://jobs.github.com/positions.json?description=python&location=new+york
 
-function xdr(url, method, data, callback, errback) {
-    var req;
+const jobsURL =  'https://jobs.github.com/positions.json?description=';
 
-    if(XMLHttpRequest) {
-        req = new XMLHttpRequest();
-
-        if('withCredentials' in req) {
-            req.open(method, url, true);
-            req.setRequestHeader('Access-Control-Allow-Origin', '*');
-            req.onerror = errback;
-            req.onreadystatechange = function() {
-                if (req.readyState === 4) {
-                    if (req.status >= 200 && req.status < 400) {
-                        callback(req.responseText);
-                    } else {
-                        errback(new Error('Response returned with non-OK status'));
-                    }
-                }
-            };
-            req.send(data);
-        }
-    } else if(XDomainRequest) {
-        req = new XDomainRequest();
-        req.open(method, url);
-        req.setRequestHeader('Access-Control-Allow-Origin', '*');
-        req.onerror = errback;
-        req.onload = function() {
-            callback(req.responseText);
-        };
-        req.send(data);
-    } else {
-        errback(new Error('CORS not supported'));
-    }
+export const loader = () => {
+  console.log('loading');
+  return (dispatch) => {
+    dispatch({
+      type: 'LOADER',
+      loading: true
+    })
+  }
 }
 
-xdr('https://jobs.github.com/positions.json?description=python&location=new+york', 'GET', null, (request) => {
-  console.log(request);
-}, (err) => { console.log(err)});
+/*
+export const getJobs = (description, location) => {
+  console.log('calling');
+  return (dispatch) => {
+    $.ajax({
+            dataType: 'jsonp',
+            type: 'GET',
+            headers: {'Access-Control-Allow-Origin' : '*'},
+            url: jobsURL + description + '&location=' + location ,
+            success: function(data, textStatus, jqXHR) {
+              console.log(JSON.stringify(data[0].description));
+              dispatch({
+                type: 'FETCH_JOBS',
+                data,
+                loading: false
+              });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log(errorThrown);
+              dispatch({
+                type: 'JOBS_ERR',
+                errorThrown,
+                loading: false
+              });
+            }
+    });
+  }
+}
+*/
+
+export const getJobs = (description, location) => {
+  console.log('calling');
+  return (dispatch) => {
+    $.ajax({
+            dataType: 'xml',
+            type: 'GET',
+            headers: {'Access-Control-Allow-Origin' : '*'},
+            url: 'https://api.indeed.com/ads/apisearch?publisher=5101146230298050&q=java&l=austin%2C+tx&sort=&radius=&st=&jt=&start=&limit=&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2' ,
+            success: function(data, textStatus, jqXHR) {
+              console.log(JSON.stringify(data));
+              dispatch({
+                type: 'FETCH_JOBS',
+                data,
+                loading: false
+              });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log(errorThrown);
+              dispatch({
+                type: 'JOBS_ERR',
+                errorThrown,
+                loading: false
+              });
+            }
+    });
+  }
+}
