@@ -14,13 +14,13 @@ body {
 
 .left {
   display: inline-grid;
-  width: 25%;
+  width: 30%;
   border: solid black 5px;
 }
 
 .right {
   display: inline-grid;
-  width: 60%;
+  width: 70%;
   border: solid black 5px;
 }
 
