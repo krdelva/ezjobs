@@ -12,21 +12,19 @@ class Weather extends Component {
   }
   render() {
     return (
-      <div>
+      <div id='job'>
       <h1>Your info goes here:</h1>
-
       {this.props.data.map((ele, i) => {
           if (ele.id === this.props.match.params.id) {
             return (
-              <div key={i} id='job'>
+              <div key={i} >
               <h4>{ele.title}</h4>
-              <p>{ele.description}</p>
+              <p dangerouslySetInnerHTML={{__html: ele.description}} />
               </div>
             );
           }
         }
       )}
-      <p>Bob</p>
       </div>
     );
   }

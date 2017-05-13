@@ -17,17 +17,9 @@ class Background extends Component {
       description: '',
       location: ''
     }
-    //this.onDescriptionChange = this.onDescriptionChange.bind(this);
-    //this.onLocationChange = this.onLocationChange.bind(this);
-    //this.onFormSubmit = this.onFormSubmit.bind(this);
-  }
-  handleClick = () => {
-    //this.props.loader();
-    //this.props.getJobs();
   }
   onDescriptionChange = (event) => {
     this.setState({ description: event.target.value });
-    // console.log(this.state.description);
   }
   onLocationChange = (event) => {
     this.setState({ location: event.target.value });
@@ -46,25 +38,30 @@ class Background extends Component {
     return (
       <Router>
       <div>
-        <form onSubmit={this.onFormSubmit}>
-          <input placeholder='Input description' value={this.state.description} onChange={this.onDescriptionChange}/>
-          <input placeholder='Input location' value={this.state.location} onChange={this.onLocationChange}/>
-          <span>
+        <div className='center'>
+          <form onSubmit={this.onFormSubmit}>
+            <input placeholder='Input description' value={this.state.description} onChange={this.onDescriptionChange}/>
+            <input placeholder='Input location' value={this.state.location} onChange={this.onLocationChange}/>
+            <span>
             <button type='submit'>Click Me!</button>
-          </span>
-        </form>
-        <button onClick={() => this.handleClick()}>Click Me!</button>
-        <div id='list'>
-        {
-          this.props.data ? this.props.data.map((ele, i) => {
-            //let text = '<p class="title">' + ele.title + '</p>';
-            //let html =  $.parseHTML(text);
-            //$('#list').append(html);
-            return <p key={i}><Link id={ele.id} to={'/' + ele.id}>{ele.title}</Link></p>
-          }): <h1>JAJAJAJ</h1>
-        }
+            </span>
+          </form>
         </div>
-        <Route path='/:id' component={Weather}/>
+        <div>
+          <div id='list' className='left'>
+          {
+            this.props.data ? this.props.data.map((ele, i) => {
+              return <div key={i}><Link id={ele.id} to={'/' + ele.id}>{ele.title}</Link>
+                <p>{ele.company}</p><p>{ele.location}</p>
+                </div>
+            }): <img className='center-img' src={require('../images/Loading_icon.gif')} alt='Loading GIF' width='400' height='400' />
+          }
+          </div>
+          <div className='right'>
+            <Route path='/:id' component={Weather}/>
+          </div>
+          <br style={{clear: 'both'}} />
+        </div>
       </div>
       </Router>
     );

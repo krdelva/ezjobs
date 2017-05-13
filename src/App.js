@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to BanAnime</h2>
+        <img className='center-img' src={require('./images/title.png')} />
         </div>
         <Background />
         <script type='text/javascript' src='scripts/geolocation.js'></script>
