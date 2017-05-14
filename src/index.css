@@ -77,7 +77,7 @@ input:focus {
   border: solid #888888 5px;
 }
 
-#submit-button {
+.submit-button {
   padding: 10px;
   border-radius: 20px;
 }
