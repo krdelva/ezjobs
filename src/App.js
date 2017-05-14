@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Provider, connect} from 'react-redux';
-import {mapStateToProps, mapDispatchToProps, store} from './redux/store.js';
-//import Weather from './components/Weather.js';
+import {mapStateToProps, store} from './redux/store.js';
 import Background from './components/Background.js';
 import Form from './components/Form.js';
 
@@ -19,7 +18,8 @@ class App extends Component {
   }
 }
 
-const Container = connect(mapStateToProps, mapDispatchToProps)(App);
+
+const Container = connect(mapStateToProps, null)(App);
 
 class AppWrapper extends Component {
   render() {

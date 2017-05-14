@@ -13,3 +13,9 @@ export const goBack = () => {
     type: 'GO_BACK'
   }
 }
+
+export const returnHome = () => {
+  return {
+    type: 'HOME'
+  }
+}

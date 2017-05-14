@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {mapStateToProps} from '../redux/store.js';
 import {bindActionCreators} from 'redux';
 import {loader, getJobs} from './Connect_Server.js';
+import {returnHome} from '../redux/actions.js';
 import {connect} from 'react-redux';
 
 class Form extends Component {
@@ -31,7 +32,7 @@ class Form extends Component {
   render() {
     return (
       <div id='form' className='center'>
-        <h1 style={{color: '#30FF31', fontFamily: 'cursive'}}>EZ JOBS</h1>
+        <h1 id='logo' onClick={() => this.props.returnHome()} style={{color: '#30FF31', fontFamily: 'cursive'}}>EZ JOBS</h1>
         <form onSubmit={this.onFormSubmit}>
           <input placeholder='Input description' value={this.state.description} onChange={this.onDescriptionChange}/>
           <input placeholder='Input location' value={this.state.location} onChange={this.onLocationChange}/>
@@ -45,7 +46,7 @@ class Form extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ loader, getJobs,}, dispatch);
+  return bindActionCreators({ loader, getJobs, returnHome}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
