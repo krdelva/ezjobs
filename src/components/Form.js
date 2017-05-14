@@ -35,7 +35,7 @@ class Form extends Component {
           <input placeholder='Input description' value={this.state.description} onChange={this.onDescriptionChange}/>
           <input placeholder='Input location' value={this.state.location} onChange={this.onLocationChange}/>
           <span>
-          <button type='submit'>Click Me!</button>
+          <button id='submit-button' type='submit'>Click Me!</button>
           </span>
         </form>
       </div>
