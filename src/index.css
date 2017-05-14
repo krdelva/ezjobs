@@ -7,9 +7,23 @@ body {
   font-family: sans-serif;
 }
 
+#banner {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+
+#form {
+  text-align: center;
+  width: 100%;
+  background-image: url("images/ez_logo.png");
+  height: 30vh;
+}
+
 #list {
   height: 100vh;
   overflow-y: auto;
+  margin: 20px;
 }
 
 .left {
@@ -28,6 +42,7 @@ body {
   font-size: 12px;
   height: 100vh;
   overflow-y: auto;
+  margin: 20px;
 }
 
 .center {

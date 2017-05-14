@@ -3,13 +3,14 @@ import {Provider, connect} from 'react-redux';
 import {mapStateToProps, mapDispatchToProps, store} from './redux/store.js';
 //import Weather from './components/Weather.js';
 import Background from './components/Background.js';
+import Form from './components/Form.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-        <img className='center-img' src={require('./images/title.png')} />
+          <Form />
         </div>
         <Background />
         <script type='text/javascript' src='scripts/geolocation.js'></script>
