@@ -16,8 +16,10 @@ body {
 #form {
   text-align: center;
   width: 100%;
-  background-image: url("images/ez_logo.png");
+  background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%);
+  background-image: linear-gradient(150deg, rgb(85, 51, 255) 15%, rgb(5, 213    , 255) 70%, rgb(166, 255, 203) 94%);
   height: 30vh;
+  border-radius: 20px;
 }
 
 #list {

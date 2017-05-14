@@ -31,6 +31,7 @@ class Form extends Component {
   render() {
     return (
       <div id='form' className='center'>
+        <h1 style={{color: '#30FF31'}}>EZ JOBS</h1>
         <form onSubmit={this.onFormSubmit}>
           <input placeholder='Input description' value={this.state.description} onChange={this.onDescriptionChange}/>
           <input placeholder='Input location' value={this.state.location} onChange={this.onLocationChange}/>
