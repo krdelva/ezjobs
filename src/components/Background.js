@@ -20,7 +20,7 @@ class Background extends Component {
           {
             this.props.jobBool ? <Weather /> : this.props.data ? this.props.data.map((ele, i) => {
               return <div className='list_item' onClick={() => this.handleClick(ele.id)} key={i}>
-                  <h3 style={{textDecoration:'underline'}}>{ele.title}</h3>
+                  <h3 style={{textDecoration:'underline', color: '#53f'}}>{ele.title}</h3>
                   <p>{ele.company}</p><p>{ele.location}</p>
                 </div>
             }): <img className='center-img' src={require('../images/Loading_icon.gif')} alt='Loading GIF' width='400' height='400' />

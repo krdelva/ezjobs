@@ -15,7 +15,7 @@ class Weather extends Component {
       <button className='submit-button' onClick={() => this.handleClick()}>GO BACK!</button>
       { this.props.data.map(ele => {
           if (ele.id === this.props.currJob) {
-            return <div key={ele.id}><h2 style={{textDecoration: 'underline'}}>{ele.title}</h2><p dangerouslySetInnerHTML={{__html: ele.description}} /> </div>
+            return <div key={ele.id}><h2 style={{textDecoration: 'underline', color: '#53f'}}>{ele.title}</h2><p dangerouslySetInnerHTML={{__html: ele.description}} /> </div>
           }
         })
       }
