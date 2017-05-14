@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {mapStateToProps} from '../redux/store.js';
 import {loader, getJobs} from './Connect_Server.js';
+import {jobClick} from '../redux/actions.js';
 import {BrowserRouter as Router,
   Route,
   Link} from 'react-router-dom';
@@ -17,6 +18,11 @@ class Background extends Component {
       description: '',
       location: ''
     }
+  }
+  handleClick = (id) => {
+    console.log(id);
+    console.log(this.props.jobBool);
+    this.props.jobClick(id);
   }
   onDescriptionChange = (event) => {
     this.setState({ description: event.target.value });
@@ -48,17 +54,15 @@ class Background extends Component {
           </form>
         </div>
         <div>
-          <div id='list' className='left'>
+          <div id='list'>
           {
-            this.props.data ? this.props.data.map((ele, i) => {
-              return <div key={i}><Link id={ele.id} to={'/' + ele.id}>{ele.title}</Link>
-                <p>{ele.company}</p><p>{ele.location}</p>
+            this.props.jobBool ? <Weather /> : this.props.data ? this.props.data.map((ele, i) => {
+              return <div className='list_item' onClick={() => this.handleClick(ele.id)} key={i}>
+                  <h4>{ele.title}</h4>
+                  <p>{ele.company}</p><p>{ele.location}</p>
                 </div>
             }): <img className='center-img' src={require('../images/Loading_icon.gif')} alt='Loading GIF' width='400' height='400' />
           }
-          </div>
-          <div className='right'>
-            <Route path='/:id' component={Weather}/>
           </div>
           <br style={{clear: 'both'}} />
         </div>
@@ -69,7 +73,7 @@ class Background extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ loader, getJobs }, dispatch);
+  return bindActionCreators({ loader, getJobs, jobClick }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Background);

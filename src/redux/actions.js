@@ -1,11 +1,15 @@
-import {INCREMENT} from './types.js';
 import {store} from './store.js';
 
-export const addUp = () => {
-  let cur = store.getState().counter;
-  console.log('called action');
+export const jobClick = (id) => {
   return {
-    type: INCREMENT,
-    newCount: cur + 1
+    type: 'JOB_CLICK',
+    id
+  }
+}
+
+export const goBack = () => {
+  console.log('calling action goback');
+  return {
+    type: 'GO_BACK'
   }
 }

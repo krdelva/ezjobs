@@ -1,6 +1,4 @@
-//import {INCREMENT} from './types.js';
-
-const combReducer = (state = {counter: 0, squares: [{id:0}]}, action) => {
+const combReducer = (state = {jobBool: false}, action) => {
   switch (action.type) {
     case 'LOADER':
       console.log(action.loading);
@@ -8,6 +6,10 @@ const combReducer = (state = {counter: 0, squares: [{id:0}]}, action) => {
     case 'FETCH_JOBS':
       console.log(action.data);
       return {...state, data: action.data, loading: action.loading};
+    case 'JOB_CLICK':
+      return {...state, jobBool: true, currJob: action.id};
+    case 'GO_BACK':
+      return {...state, jobBool: false};
     default:
       return state;
   }

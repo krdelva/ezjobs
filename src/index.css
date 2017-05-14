@@ -38,3 +38,8 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+.list_item:hover {
+  cursor: pointer;
+  background: grey;
+}
