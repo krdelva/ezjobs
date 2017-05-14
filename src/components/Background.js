@@ -23,7 +23,8 @@ class Background extends Component {
                   <h3 style={{textDecoration:'underline', color: '#53f'}}>{ele.title}</h3>
                   <p>{ele.company}</p><p>{ele.location}</p>
                 </div>
-            }): <img className='center-img' src={require('../images/Loading_icon.gif')} alt='Loading GIF' width='400' height='400' />
+            }): this.props.loading ? <img className='center-img' src={require('../images/Loading_icon.gif')} alt='Loading GIF' width='400' height='400' />
+            : <h1 className='center' style={{color: '#53f'}}>Welcome to EZ JOBS</h1>
           }
           </div>
         </div>
