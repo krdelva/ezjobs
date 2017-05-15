@@ -12,7 +12,6 @@ class App extends Component {
           <Form />
         </div>
         <Background />
-        <script type='text/javascript' src='scripts/geolocation.js'></script>
       </div>
     );
   }

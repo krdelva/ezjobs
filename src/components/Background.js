@@ -20,11 +20,11 @@ class Background extends Component {
           {
             this.props.jobBool ? <Weather /> : this.props.data ? this.props.data.map((ele, i) => {
               return <div className='list_item' onClick={() => this.handleClick(ele.id)} key={i}>
-                  <h3 style={{textDecoration:'underline', color: '#53f'}}>{ele.title}</h3>
+                  <h3 style={{textDecoration:'underline', color: '#C9E8B9'}}>{ele.title}</h3>
                   <p>{ele.company}</p><p>{ele.location}</p>
                 </div>
-            }): this.props.loading ? <img className='center-img' src={require('../images/Loading_icon.gif')} alt='Loading GIF' width='400' height='400' />
-            : <h1 className='center' style={{color: '#53f'}}>Welcome to EZ JOBS</h1>
+            }): this.props.loading ? <img className='center-img' src={require('../images/loading_gif_transparent.gif')} alt='Loading GIF' width='400' height='400' />
+            : <h1 className='center' style={{color: '#C9E8B9'}}>Welcome to EZ JOBS</h1>
           }
           </div>
         </div>
