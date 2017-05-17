@@ -118,6 +118,7 @@ i:hover {
     overflow-y: hidden !important;
   }
   .list_item {
-    border-top: solid black 2px !important;
+    border-top: solid black 1px !important;
+    border-radius: 0 !important;
   }
 }
