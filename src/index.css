@@ -113,6 +113,7 @@ i:hover {
 
 @media only screen and (max-device-width: 480px) {
   #list {
-    margin: none !important;
+    margin: 0 !important;
+    overflow-y: none !important;
   }
 }
