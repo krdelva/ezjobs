@@ -5,8 +5,8 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Baloo', sans-serif;
-  background: #FFFEEB;
+  font-family: 'Muli', sans-serif;
+  /*background: #EEF5DB/*#FFFEEB;*/
 }
 
 p {
@@ -16,7 +16,7 @@ p {
 #form {
   text-align: center;
   width: 100%;
-  background: #CCE2E8;
+  background: #C7EFCF;
 }
 
 #list {
@@ -75,14 +75,9 @@ input {
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
-  color: 	#CCE2E8;
-  background: #FFFEEB;
   border-bottom: none;
 }
 
-input::placeholder {
-  color: #CCE2E8;
-}
 
 input:focus {
   outline: none;
@@ -91,17 +86,12 @@ input:focus {
   background: #FFFEEB;
 }
 
-input:focus::placeholder {
-  color: #CCE2E8;
-}
 
 .submit-button {
   padding: 10px;
   border-radius: 20px;
-  background: #FFFEEB;
-  color: #CCE2E8;
-  border: solid #CCE2E8 1px;
-  border-bottom: none;
+  background: white;
+  border: none;
   margin: 0 auto;
 }
 
@@ -115,4 +105,14 @@ input:focus::placeholder {
 
 #logo {
   margin: 0;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-device-width: 480px) {
+  #list {
+    margin: none !important;
+  }
 }
