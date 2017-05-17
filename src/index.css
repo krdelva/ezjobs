@@ -17,7 +17,6 @@ p {
   text-align: center;
   width: 100%;
   background: #CCE2E8;
-  height: 30vh;
 }
 
 #list {
@@ -112,4 +111,8 @@ input:focus::placeholder {
 
 #logo:hover {
   cursor: pointer;
+}
+
+#logo {
+  margin: 0;
 }

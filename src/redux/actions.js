@@ -19,3 +19,16 @@ export const returnHome = () => {
     type: 'HOME'
   }
 }
+
+export const searchActive = () => {
+  let status = store.getState().searchBool;
+  if (status) {
+    return {
+      type: 'SEARCH_OFF'
+    }
+  } else {
+    return {
+      type: 'SEARCH_ON'
+    }
+  }
+}

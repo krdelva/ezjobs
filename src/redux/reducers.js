@@ -1,4 +1,4 @@
-const combReducer = (state = {jobBool: false}, action) => {
+const combReducer = (state = {jobBool: false, searchBool: false}, action) => {
   switch (action.type) {
     case 'LOADER':
       console.log(action.loading);
@@ -12,6 +12,10 @@ const combReducer = (state = {jobBool: false}, action) => {
       return {...state, jobBool: false};
     case 'HOME':
       return {...state, jobBool: false, data: false, loading: false};
+    case 'SEARCH_ON':
+      return {...state, searchBool: true};
+    case 'SEARCH_OFF':
+      return {...state, searchBool: false};
     default:
       return state;
   }

@@ -10,6 +10,7 @@ export const mapStateToProps = (state) => {
     data: state.data,
     loading: state.loading,
     jobBool: state.jobBool,
-    currJob: state.currJob
+    currJob: state.currJob,
+    searchBool: state.searchBool
   };
 };
