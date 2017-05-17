@@ -6,7 +6,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Muli', sans-serif;
-  /*background: #EEF5DB/*#FFFEEB;*/
 }
 
 p {
@@ -117,5 +116,8 @@ i:hover {
     width: 100% !important;
     height: 100% !important;
     overflow-y: hidden !important;
+  }
+  .list_item {
+    border-top: solid black 2px !important;
   }
 }

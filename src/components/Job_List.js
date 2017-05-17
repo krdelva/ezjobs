@@ -4,9 +4,9 @@ import {bindActionCreators} from 'redux';
 import {mapStateToProps} from '../redux/store.js';
 import {loader, getJobs} from './Connect_Server.js';
 import {jobClick} from '../redux/actions.js';
-import Weather from './Weather.js';
+import JobDescription from './Job_Description.js';
 
-class Background extends Component {
+class JobList extends Component {
   handleClick = (id) => {
     console.log(id);
     console.log(this.props.jobBool);
@@ -18,7 +18,7 @@ class Background extends Component {
       <div>
           <div id='list'>
           {
-            this.props.jobBool ? <Weather /> : this.props.data ? this.props.data.map((ele, i) => {
+            this.props.jobBool ? <JobDescription /> : this.props.data ? this.props.data.map((ele, i) => {
               return <div className='list_item' onClick={() => this.handleClick(ele.id)} key={i}>
                   <h3 style={{textDecoration:'underline', color: '#C7EFCF'}}>{ele.title}</h3>
                   <p>{ele.company}</p><p>{ele.location}</p>
@@ -36,4 +36,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ loader, getJobs, jobClick }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Background);
+export default connect(mapStateToProps, mapDispatchToProps)(JobList);

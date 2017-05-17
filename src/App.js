@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Provider, connect} from 'react-redux';
 import {mapStateToProps, store} from './redux/store.js';
-import Background from './components/Background.js';
+import JobList from './components/Job_List.js';
 import Form from './components/Form.js';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
         <div className="App-header">
           <Form />
         </div>
-        <Background />
+        <JobList />
       </div>
     );
   }

@@ -4,7 +4,7 @@ import {mapStateToProps} from '../redux/store.js';
 import {goBack} from '../redux/actions.js';
 import {bindActionCreators} from 'redux';
 
-class Weather extends Component {
+class JobDescription extends Component {
   handleClick = () => {
     console.log('calling');
     this.props.goBack();
@@ -28,4 +28,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ goBack }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Weather);
+export default connect(mapStateToProps, mapDispatchToProps)(JobDescription);
