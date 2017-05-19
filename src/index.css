@@ -125,5 +125,6 @@ i:hover {
     cursor: none !important;
     box-shadow: none !important;
     border: none !important;
+    border-top: solid black 1px !important;
   }
 }
