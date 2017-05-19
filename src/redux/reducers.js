@@ -11,7 +11,7 @@ const combReducer = (state = {jobBool: false, searchBool: false}, action) => {
     case 'GO_BACK':
       return {...state, jobBool: false};
     case 'HOME':
-      return {...state, jobBool: false, data: false, loading: false};
+      return {...state, jobBool: false, data: false, loading: false, searchBool: false};
     case 'SEARCH_ON':
       return {...state, searchBool: true};
     case 'SEARCH_OFF':

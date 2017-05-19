@@ -13,7 +13,6 @@ p {
 }
 
 #form {
-  text-align: center;
   width: 100%;
   background: #C7EFCF;
 }
@@ -27,14 +26,12 @@ p {
 
 .left {
   display: inline-grid;
-  width: 30%;
-  border: solid black 5px;
+  width: 30vw;
 }
 
 .right {
   display: inline-grid;
-  width: 70%;
-  border: solid black 5px;
+  width: 70vw;
 }
 
 #job {
@@ -104,11 +101,13 @@ input:focus {
 
 #logo {
   margin: 0;
+  text-align: center;
 }
 
 i:hover {
   cursor: pointer;
 }
+
 
 @media only screen and (max-device-width: 480px) {
   #list {

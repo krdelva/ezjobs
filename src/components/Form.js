@@ -32,7 +32,7 @@ class Form extends Component {
   render() {
     return (
       <div id='form' className='center'>
-        <h1 id='logo' onClick={() => this.props.returnHome()} style={{color: 'white',fontFamily: 'cursive'}}>EZ JOBS</h1>
+      <h1 id='logo' onClick={() => this.props.returnHome()} style={{color: 'white',fontFamily: 'cursive'}}>EZ JOBS</h1>
         { this.props.searchBool ?
           <form onSubmit={this.onFormSubmit}>
             <input placeholder='Input description' value={this.state.description} onChange={this.onDescriptionChange}/>
@@ -40,7 +40,7 @@ class Form extends Component {
             <span>
             <button className='submit-button' type='submit'>Click Me!</button>
             </span>
-          </form> : <i onClick={() => this.props.searchActive()} className="fa fa-search" aria-hidden="true"></i>
+          </form> : <i onClick={() => this.props.searchActive()} className="fa fa-search fa-2x" aria-hidden="true"></i>
         }
       </div>
     );
