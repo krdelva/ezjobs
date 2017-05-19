@@ -121,4 +121,9 @@ i:hover {
     border-top: solid black 1px !important;
     border-radius: 0 !important;
   }
+  .list_item:hover {
+    cursor: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
 }
